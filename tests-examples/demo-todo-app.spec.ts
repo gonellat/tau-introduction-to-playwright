@@ -37,7 +37,8 @@ test.describe('New Todo', () => {
     await checkNumberOfTodosInLocalStorage(page, 2);
   });
 
-  test('should clear text input field when an item is added', async ({ page }) => {
+
+  test('@smoke should clear text input field when an item is added', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
@@ -50,7 +51,7 @@ test.describe('New Todo', () => {
     await checkNumberOfTodosInLocalStorage(page, 1);
   });
 
-  test('should append new items to the bottom of the list', async ({ page }) => {
+  test('@smoke should append new items to the bottom of the list', async ({ page }) => {
     // Create 3 items.
     await createDefaultTodos(page);
 
@@ -88,7 +89,7 @@ test.describe('Mark all as completed', () => {
     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
   });
 
-  test('should allow me to clear the complete state of all items', async ({ page }) => {
+  test('@smoke should allow me to clear the complete state of all items', async ({ page }) => {
     const toggleAll = page.getByLabel('Mark all as complete');
     // Check and then immediately uncheck.
     await toggleAll.check();

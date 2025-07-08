@@ -31,10 +31,12 @@ let eyes: Eyes;
 // beforeAll for Applitools
 test.beforeAll(async() => {
 
+    // Free version only allowed 1.  Cloud 
     if (USE_ULTRAFAST_GRID) {
         Runner = new VisualGridRunner({ testConcurrency: 5 });
     }
     else {
+        // Local version is ClassicRunner
         Runner = new ClassicRunner();
     }
     
